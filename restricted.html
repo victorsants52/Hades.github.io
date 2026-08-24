@@ -48,7 +48,7 @@
         <button
             type="button"
             class="access-button"
-            id="authenticateButton">
+            onclick="authenticate()">
             AUTHENTICATE
         </button>
         <div
@@ -66,48 +66,31 @@
     </footer>
 </main>
 <script>
-/* ==========================================
-   EXECUTIVE CREDENTIALS
-========================================== */
-const EXECUTIVE_ID = "HDS-7149-AX";
-const EXECUTIVE_CODE = "AETER-0917";
-/* ==========================================
-   ELEMENTS
-========================================== */
-const accessID =
-    document.getElementById("accessID");
-const accessCode =
-    document.getElementById("accessCode");
-const authenticateButton =
-    document.getElementById(
-        "authenticateButton"
-    );
-const result =
-    document.getElementById(
-        "authenticationResult"
-    );
-const systemStatus =
-    document.getElementById(
-        "systemStatus"
-    );
-/* ==========================================
-   AUTHENTICATION
-========================================== */
+const correctID = "HDS-7149-AX";
+const correctCode = "AETER-0917";
 function authenticate() {
     const enteredID =
-        accessID.value
+        document.getElementById("accessID")
+        .value
         .trim()
         .toUpperCase();
     const enteredCode =
-        accessCode.value
+        document.getElementById("accessCode")
+        .value
         .trim()
         .toUpperCase();
-    /* ======================================
-       WRONG CREDENTIALS
-    ====================================== */
+    const result =
+        document.getElementById(
+            "authenticationResult"
+        );
+    const systemStatus =
+        document.getElementById(
+            "systemStatus"
+        );
+    /* CREDENCIAIS ERRADAS */
     if (
-        enteredID !== EXECUTIVE_ID ||
-        enteredCode !== EXECUTIVE_CODE
+        enteredID !== correctID ||
+        enteredCode !== correctCode
     ) {
         systemStatus.textContent =
             "AUTHENTICATION FAILED";
@@ -117,57 +100,19 @@ function authenticate() {
             "AUTHENTICATION ATTEMPT LOGGED.";
         return;
     }
-    /* ======================================
-       CORRECT CREDENTIALS
-    ====================================== */
+    /* CREDENCIAIS CORRETAS */
     systemStatus.textContent =
         "ACCESS GRANTED";
     result.innerHTML =
         "ACCESS GRANTED<br><br>" +
         "EXECUTIVE AUTHENTICATION SUCCESSFUL.<br><br>" +
         "LOADING EXECUTIVE ARCHIVE...";
-    authenticateButton.disabled = true;
-    accessID.disabled = true;
-    accessCode.disabled = true;
-    /* ======================================
-       GO DIRECTLY TO EXECUTIVE.HTML
-    ====================================== */
+    /* REDIRECIONAMENTO */
     setTimeout(function() {
-        window.location.replace(
-            "executive.html"
-        );
+        window.location.href =
+            "executive.html";
     }, 1500);
 }
-/* ==========================================
-   BUTTON
-========================================== */
-authenticateButton.addEventListener(
-    "click",
-    authenticate
-);
-/* ==========================================
-   ENTER KEY
-========================================== */
-accessID.addEventListener(
-    "keydown",
-    function(event) {
-        if (
-            event.key === "Enter"
-        ) {
-            authenticate();
-        }
-    }
-);
-accessCode.addEventListener(
-    "keydown",
-    function(event) {
-        if (
-            event.key === "Enter"
-        ) {
-            authenticate();
-        }
-    }
-);
 </script>
 </body>
 </html>
