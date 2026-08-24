@@ -878,5 +878,288 @@ footer {
     align-items: center !important;
     justify-content: center !important;
     flex-shrink: 0 !important;
-    margin-left: auto !important;
+    margin-left: auto !
+
+  /* =========================
+   RESEARCH HERO
+========================= */
+
+.research-hero {
+
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 100px 8%;
+
+    border-bottom: 1px solid #0b2732;
+
+    background:
+
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(8, 127, 163, 0.14),
+            transparent 30%
+        );
+
 }
+
+
+.research-hero h1 {
+
+    font-size: clamp(
+        55px,
+        9vw,
+        105px
+    );
+
+    line-height: .9;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.research-hero p:not(.section-title) {
+
+    max-width: 600px;
+
+    color: #81969e;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================
+   RESEARCH LIST
+========================= */
+
+.research-list {
+
+    padding: 120px 8%;
+
+}
+
+
+.research-project {
+
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 40px;
+
+    padding: 55px 0;
+
+    border-top: 1px solid #0b2732;
+
+}
+
+
+.project-number {
+
+    color: #087fa3;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.research-project h2 {
+
+    font-size: 30px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.research-project p {
+
+    max-width: 650px;
+
+    color: #71858c;
+
+    line-height: 1.8;
+
+}
+
+
+.project-status {
+
+    color: #087fa3 !important;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================
+   CLASSIFIED
+========================= */
+
+.classified {
+
+    padding: 120px 8%;
+
+    border-top: 1px solid #0b2732;
+
+    background: #020608;
+
+}
+
+
+.classified-box {
+
+    max-width: 700px;
+
+    padding: 45px;
+
+    border: 1px solid #0b2732;
+
+    background: #050c10;
+
+}
+
+
+.classified-label {
+
+    color: #087fa3;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.classified-box h2 {
+
+    font-size: 35px;
+
+    letter-spacing: 5px;
+
+    margin: 20px 0;
+
+}
+
+
+.classified-box p {
+
+    color: #586e76;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.access-button {
+
+    margin-top: 25px;
+
+    padding: 14px 25px;
+
+    background: transparent;
+
+    border: 1px solid #087fa3;
+
+    color: #12b8e6;
+
+    letter-spacing: 2px;
+
+    font-size: 9px;
+
+    cursor: pointer;
+
+}
+
+
+.access-button:hover {
+
+    background: #087fa3;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================
+   MOBILE RESEARCH
+========================= */
+
+@media (max-width: 700px) {
+
+    .research-hero {
+
+        min-height: 600px;
+
+        padding: 90px 7%;
+
+    }
+
+
+    .research-hero h1 {
+
+        font-size: 55px;
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .research-list {
+
+        padding: 90px 7%;
+
+    }
+
+
+    .research-project {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 45px 0;
+
+    }
+
+
+    .research-project h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .classified {
+
+        padding: 90px 7%;
+
+    }
+
+
+    .classified-box {
+
+        padding: 30px;
+
+    }
+
+}      
