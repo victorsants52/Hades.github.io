@@ -459,3 +459,86 @@ footer {
     }
 
 }
+/* =========================
+   FOUNDER
+========================= */
+
+.founder {
+
+    padding: 130px 8%;
+
+    border-top: 1px solid #0b2732;
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(8, 127, 163, 0.10),
+            transparent 35%
+        );
+}
+
+
+.founder-info {
+
+    max-width: 650px;
+}
+
+
+.founder h2 {
+
+    font-size: 80px;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 10px;
+}
+
+
+.founder-role {
+
+    color: #087fa3;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 30px;
+}
+
+
+.quote {
+
+    margin-top: 35px;
+
+    padding-left: 20px;
+
+    border-left: 1px solid #087fa3;
+
+    color: #12b8e6;
+
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+
+@media (max-width: 700px) {
+
+    .founder {
+
+        padding: 100px 7%;
+    }
+
+
+    .founder h2 {
+
+        font-size: 60px;
+    }
+
+}
