@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact — Hades Corporation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="contact-page">
+
+
+<header>
+
+    <div class="logo">
+
+        HADES
+        <span>CORPORATION</span>
+
+    </div>
+
+
+    <button
+        class="menu-button"
+        onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+
+    <nav id="mobileMenu">
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="about.html">
+            ABOUT
+        </a>
+
+        <a href="research.html">
+            RESEARCH
+        </a>
+
+        <a href="careers.html">
+            CAREERS
+        </a>
+
+        <a href="contact.html">
+            CONTACT
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="contact-container">
+
+
+    <!-- INTRO -->
+
+    <section class="contact-intro">
+
+        <p class="section-title">
+            HADES CORPORATION // CONTACT
+        </p>
+
+
+        <h1>
+            HOW CAN WE
+            <br>
+            ASSIST YOU?
+        </h1>
+
+
+        <p>
+
+            Our communication assistant is
+            available to answer questions
+            regarding Hades Corporation.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- CHAT -->
+
+    <section class="assistant-container">
+
+
+        <div class="assistant-header">
+
+            <div>
+
+                <span class="assistant-status">
+                    ● ONLINE
+                </span>
+
+                <h2>
+                    HADES ASSISTANT
+                </h2>
+
+            </div>
+
+
+            <span class="assistant-id">
+                COMMUNICATION NODE
+            </span>
+
+        </div>
+
+
+
+        <div
+            id="chatWindow"
+            class="chat-window">
+
+
+            <!-- INITIAL MESSAGE -->
+
+            <div class="chat-message assistant">
+
+                <div class="message-name">
+                    HADES ASSISTANT
+                </div>
+
+                <p>
+
+                    Hello. Welcome to Hades Corporation
+                    Communication Support.
+
+                </p>
+
+                <p>
+
+                    Unfortunately, our contact system
+                    is currently experiencing technical
+                    difficulties. Please try again later.
+
+                </p>
+
+                <p>
+
+                    If you are our CEO, Hades, please
+                    enter your personal confirmation ID
+                    for system evaluation.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- INPUT -->
+
+        <div class="chat-input-area">
+
+            <input
+                type="text"
+                id="chatInput"
+                placeholder="Type your message..."
+                autocomplete="off">
+
+
+            <button
+                onclick="sendMessage()">
+
+                SEND
+
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- STATUS -->
+
+    <section class="contact-status">
+
+        <span>
+            SYSTEM STATUS: OPERATIONAL
+        </span>
+
+        <span>
+            RESPONSE CHANNEL: ACTIVE
+        </span>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        © 2026 HADES CORPORATION
+    </p>
+
+    <p>
+        COMMUNICATION SERVICES
+    </p>
+
+</footer>
+
+
+
+<script>
+
+let stage = "id";
+
+let authenticated = false;
+
+
+const correctID = "HDS-7149-AX";
+
+const password = "AETER-0917";
+
+
+const chatWindow =
+    document.getElementById("chatWindow");
+
+const chatInput =
+    document.getElementById("chatInput");
+
+
+
+function addMessage(sender, text, type) {
+
+    const message =
+        document.createElement("div");
+
+    message.className =
+        "chat-message " + type;
+
+
+    const name =
+        document.createElement("div");
+
+    name.className =
+        "message-name";
+
+    name.textContent =
+        sender;
+
+
+    const content =
+        document.createElement("p");
+
+    content.textContent =
+        text;
+
+
+    message.appendChild(name);
+
+    message.appendChild(content);
+
+    chatWindow.appendChild(message);
+
+
+    chatWindow.scrollTop =
+        chatWindow.scrollHeight;
+
+}
+
+
+
+function sendMessage() {
+
+    const raw =
+        chatInput.value.trim();
+
+
+    if (!raw) return;
+
+
+    addMessage(
+        "YOU",
+        raw,
+        "user"
+    );
+
+
+    chatInput.value = "";
+
+
+    setTimeout(() => {
+
+        processMessage(raw);
+
+    }, 500);
+
+}
+
+
+
+function processMessage(message) {
+
+    const text =
+        message.toLowerCase().trim();
+
+
+
+    /* =========================
+       STAGE 1 — ID
+    ========================= */
+
+
+    if (stage === "id") {
+
+        if (
+            message.toUpperCase()
+            === correctID
+        ) {
+
+            stage = "password-confirmation";
+
+
+            addMessage(
+                "HADES ASSISTANT",
+
+                "IDENTITY CONFIRMED.",
+
+                "assistant"
+            );
+
+
+            setTimeout(() => {
+
+                addMessage(
+                    "HADES ASSISTANT",
+
+                    "Welcome, Hades. Following confirmation of your identity, we can begin the evaluation of our communication system. Your registered executive password is AETER-0917. Please confirm that this password is correct.",
+
+                    "assistant"
+                );
+
+            }, 700);
+
+
+        } else {
+
+            addMessage(
+                "HADES ASSISTANT",
+
+                "Identity verification failed. The confirmation ID provided does not match any authorized executive account. Please verify the information and try again.",
+
+                "assistant"
+            );
+
+        }
+
+        return;
+
+    }
+
+
+
+    /* =========================
+       STAGE 2 — PASSWORD
+    ========================= */
+
+
+    if (
+        stage === "password-confirmation"
+    ) {
+
+
+        if (
+            text === "yes" ||
+            text === "yes." ||
+            text === "confirm" ||
+            text === "confirmed" ||
+            text === "correct"
+        ) {
+
+            stage = "conversation";
+
+            authenticated = true;
+
+
+            addMessage(
+                "HADES ASSISTANT",
+
+                "PASSWORD CONFIRMED.",
+
+                "assistant"
+            );
+
+
+            setTimeout(() => {
+
+                addMessage(
+                    "HADES ASSISTANT",
+
+                    "Executive authentication successful. Communication system evaluation beginning...",
+
+                    "assistant"
+                );
+
+
+            }, 700);
+
+
+            setTimeout(() => {
+
+                addMessage(
+                    "HADES ASSISTANT",
+
+                    "Please send a message to continue.",
+
+                    "assistant"
+                );
+
+
+            }, 1300);
+
+
+        } else if (
+            text === "no" ||
+            text === "no." ||
+            text === "incorrect"
+        ) {
+
+            stage = "id";
+
+            addMessage(
+                "HADES ASSISTANT",
+
+                "Executive authentication cancelled. No changes have been made to your account. Please provide your executive confirmation ID if you wish to restart the verification process.",
+
+                "assistant"
+            );
+
+
+        } else {
+
+            addMessage(
+                "HADES ASSISTANT",
+
+                "Please confirm whether the registered password is correct.",
+
+                "assistant"
+            );
+
+        }
+
+        return;
+
+    }
+
+
+
+    /* =========================
+       STAGE 3 — CHAT
+    ========================= */
+
+
+    if (
+        stage === "conversation"
+    ) {
+
+        addMessage(
+            "HADES ASSISTANT",
+
+            "Communication channel operational. Response latency: 0.04 seconds. Everything appears to be functioning normally.",
+
+            "assistant"
+        );
+
+
+        setTimeout(() => {
+
+            addMessage(
+                "HADES ASSISTANT",
+
+                "Wait.",
+
+                "assistant"
+            );
+
+        }, 1500);
+
+
+        setTimeout(() => {
+
+            addMessage(
+                "SYSTEM",
+
+                "ERROR 0x17 — Communication channel interrupted. Unauthorized session detected. Attempting to terminate connection...",
+
+                "error"
+            );
+
+        }, 3000);
+
+
+        setTimeout(() => {
+
+            addMessage(
+                "SYSTEM",
+
+                "CONNECTION TERMINATED.",
+
+                "error"
+            );
+
+
+            stage = "terminated";
+
+
+        }, 4300);
+
+
+        return;
+
+    }
+
+
+
+    /* =========================
+       TERMINATED
+    ========================= */
+
+
+    if (
+        stage === "terminated"
+    ) {
+
+        addMessage(
+            "SYSTEM",
+
+            "COMMUNICATION CHANNEL OFFLINE.",
+
+            "error"
+        );
+
+    }
+
+}
+
+
+
+chatInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter"
+        ) {
+
+            sendMessage();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
