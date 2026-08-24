@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Executive Archive — HADES</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="executive-page">
+
+
+<header class="executive-header">
+
+    <div class="logo">
+
+        HADES
+        <span>CORPORATION</span>
+
+    </div>
+
+
+    <div class="executive-status">
+
+        EXECUTIVE ARCHIVE
+        <span>ACCESS GRANTED</span>
+
+    </div>
+
+</header>
+
+
+
+<main class="executive-container">
+
+
+<!-- =========================
+     PROFILE
+========================= -->
+
+<section class="executive-profile">
+
+    <p class="section-title">
+        PERSONAL ARCHIVE // S-001
+    </p>
+
+
+    <h1>
+        HADES
+    </h1>
+
+
+    <p class="profile-warning">
+        CONFIDENTIAL EXECUTIVE MATERIAL
+    </p>
+
+
+    <div class="profile-grid">
+
+        <div>
+            <span>DESIGNATION</span>
+            <strong>HADES</strong>
+        </div>
+
+        <div>
+            <span>POSITION</span>
+            <strong>CHIEF EXECUTIVE OFFICER</strong>
+        </div>
+
+        <div>
+            <span>AUTHORIZATION</span>
+            <strong>EXECUTIVE LEVEL</strong>
+        </div>
+
+        <div>
+            <span>ARCHIVE STATUS</span>
+            <strong>ACTIVE</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     DOCUMENTS
+========================= -->
+
+<section class="executive-documents">
+
+    <p class="section-title">
+        EXECUTIVE DOCUMENTS
+    </p>
+
+
+    <h2>
+        RESTRICTED MATERIAL
+    </h2>
+
+
+
+    <!-- SERAPHIM -->
+
+    <article class="document-card">
+
+        <div class="document-number">
+            01
+        </div>
+
+
+        <div class="document-content">
+
+            <span>
+                PROJECT
+            </span>
+
+            <h3>
+                SERAPHIM
+            </h3>
+
+            <p>
+
+                Strategic research concerning
+                the capabilities, limitations and
+                potential applications of the
+                Seraphim subject.
+
+            </p>
+
+
+            <button
+                onclick="openDocument('seraphim')">
+
+                OPEN FILE
+
+            </button>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- AZAZEL -->
+
+    <article class="document-card">
+
+        <div class="document-number">
+            02
+        </div>
+
+
+        <div class="document-content">
+
+            <span>
+                SUBJECT FILE
+            </span>
+
+            <h3>
+                AZAZEL
+            </h3>
+
+            <p>
+
+                Personal observations,
+                capability assessments and
+                strategic importance.
+
+            </p>
+
+
+            <button
+                onclick="openDocument('azazel')">
+
+                OPEN FILE
+
+            </button>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- WORLD -->
+
+    <article class="document-card">
+
+        <div class="document-number">
+            03
+        </div>
+
+
+        <div class="document-content">
+
+            <span>
+                STRATEGIC PROTOCOL
+            </span>
+
+            <h3>
+                WORLD CREATION PROTOCOL
+            </h3>
+
+            <p>
+
+                Long-term implementation
+                strategy involving Seraphim
+                capabilities.
+
+            </p>
+
+
+            <button
+                onclick="openDocument('world')">
+
+                OPEN FILE
+
+            </button>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- CONTRACTS -->
+
+    <article class="document-card">
+
+        <div class="document-number">
+            04
+        </div>
+
+
+        <div class="document-content">
+
+            <span>
+                LEGAL
+            </span>
+
+            <h3>
+                CONTRACTS
+            </h3>
+
+            <p>
+
+                Restricted agreements and
+                executive authorization records.
+
+            </p>
+
+
+            <button
+                onclick="openDocument('contracts')">
+
+                OPEN FILE
+
+            </button>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- REPORTS -->
+
+    <article class="document-card">
+
+        <div class="document-number">
+            05
+        </div>
+
+
+        <div class="document-content">
+
+            <span>
+                RESEARCH
+            </span>
+
+            <h3>
+                RESEARCH REPORTS
+            </h3>
+
+            <p>
+
+                Internal reports concerning
+                ongoing Hades Corporation
+                projects.
+
+            </p>
+
+
+            <button
+                onclick="openDocument('reports')">
+
+                OPEN FILE
+
+            </button>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- PRIVATE NOTES -->
+
+    <article class="document-card private">
+
+        <div class="document-number">
+            06
+        </div>
+
+
+        <div class="document-content">
+
+            <span>
+                PRIVATE // EXECUTIVE ONLY
+            </span>
+
+            <h3>
+                PRIVATE NOTES
+            </h3>
+
+            <p>
+
+                Personal notes belonging
+                exclusively to Hades.
+
+            </p>
+
+
+            <button
+                onclick="openDocument('private')">
+
+                OPEN FILE
+
+            </button>
+
+        </div>
+
+    </article>
+
+
+</section>
+
+
+
+<!-- =========================
+     DOCUMENT VIEWER
+========================= -->
+
+<section
+    id="documentViewer"
+    class="document-viewer">
+
+
+    <div class="viewer-header">
+
+        <span>
+            RESTRICTED DOCUMENT
+        </span>
+
+
+        <button
+            onclick="closeDocument()">
+
+            CLOSE
+
+        </button>
+
+    </div>
+
+
+    <div id="documentContent">
+
+    </div>
+
+
+</section>
+
+
+
+</main>
+
+
+
+<footer class="executive-footer">
+
+    <p>
+        HADES CORPORATION
+    </p>
+
+
+    <p>
+        EXECUTIVE ARCHIVE // ACCESS LOGGED
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+const documents = {
+
+
+/* =========================
+   SERAPHIM
+========================= */
+
+
+seraphim: `
+
+<p class="document-label">
+PROJECT SERAPHIM
+</p>
+
+<h2>
+SERAPHIM — STRATEGIC ASSET
+</h2>
+
+<p>
+
+Project Seraphim was initially
+classified as a theoretical research
+initiative.
+
+</p>
+
+<p>
+
+Current findings indicate that the
+subject possesses capabilities far
+beyond the original projections.
+
+</p>
+
+<p>
+
+The subject is not merely a source
+of power.
+
+</p>
+
+<p class="highlight">
+
+The subject may be capable of
+creating what does not yet exist.
+
+</p>
+
+<p>
+
+This changes the purpose of the
+project entirely.
+
+</p>
+
+<p>
+
+We are no longer studying what
+the Seraphim can do.
+
+</p>
+
+<p class="highlight">
+
+We are determining what can be
+built through him.
+
+</p>
+
+<p class="document-signature">
+
+— HADES
+
+</p>
+
+`,
+
+
+/* =========================
+   AZAZEL
+========================= */
+
+
+azazel: `
+
+<p class="document-label">
+SUBJECT FILE // AZAZEL
+</p>
+
+<h2>
+AZAZEL
+</h2>
+
+<p>
+
+Subject demonstrates extraordinary
+stability despite the scale of his
+capabilities.
+
+</p>
+
+<p>
+
+His composure is unusual.
+
+</p>
+
+<p>
+
+His presence is difficult to ignore.
+
+</p>
+
+<p>
+
+I have observed him during several
+experiments.
+
+</p>
+
+<p>
+
+He appears unaware of how much
+attention he attracts.
+
+</p>
+
+<p class="highlight">
+
+There is something unsettling about
+watching someone possess the ability
+to create worlds and remain unaware
+of the effect his existence has on
+those around him.
+
+</p>
+
+<p>
+
+The Corporation sees an asset.
+
+</p>
+
+<p>
+
+I see something considerably more
+important.
+
+</p>
+
+<p>
+
+Azazel cannot simply be treated as
+another component of Project Seraphim.
+
+</p>
+
+<p class="document-signature">
+
+— HADES
+
+</p>
+
+`,
+
+
+/* =========================
+   WORLD
+========================= */
+
+
+world: `
+
+<p class="document-label">
+STRATEGIC PROTOCOL
+</p>
+
+<h2>
+WORLD CREATION PROTOCOL
+</h2>
+
+<p>
+
+The current world is inefficient.
+
+</p>
+
+<p>
+
+Too many variables.
+
+Too many competing interests.
+
+Too many opportunities for disorder.
+
+</p>
+
+<p>
+
+If Azazel's capabilities can be
+properly directed, an entirely new
+environment could be constructed.
+
+</p>
+
+<p>
+
+A world designed from the beginning.
+
+</p>
+
+<p class="highlight">
+
+A world without uncertainty.
+
+</p>
+
+<p>
+
+A world where authority is absolute.
+
+</p>
+
+<p>
+
+There would be no need to convince
+people to obey.
+
+</p>
+
+<p>
+
+The structure of the world itself
+would make obedience inevitable.
+
+</p>
+
+<p>
+
+Azazel would provide the foundation.
+
+</p>
+
+<p>
+
+I would provide the direction.
+
+</p>
+
+<p class="highlight">
+
+Together, we could build something
+that no government could ever
+control.
+
+</p>
+
+<p class="document-signature">
+
+— HADES
+
+</p>
+
+`,
+
+
+/* =========================
+   CONTRACTS
+========================= */
+
+
+contracts: `
+
+<p class="document-label">
+LEGAL ARCHIVE
+</p>
+
+<h2>
+RESTRICTED CONTRACTS
+</h2>
+
+<p>
+
+Multiple agreements concerning
+Project Seraphim remain active.
+
+</p>
+
+<p>
+
+Authorization has been granted for
+continued observation, research and
+containment procedures.
+
+</p>
+
+<p>
+
+Several documents remain unavailable
+even at executive level.
+
+</p>
+
+<p class="highlight">
+
+RECORDS REMOVED BY EXECUTIVE ORDER.
+
+</p>
+
+<p>
+
+Reason:
+
+</p>
+
+<p>
+
+████████████████████████
+
+</p>
+
+<p>
+
+Further access requires secondary
+authorization.
+
+</p>
+
+`,
+
+
+/* =========================
+   REPORTS
+========================= */
+
+
+reports: `
+
+<p class="document-label">
+RESEARCH ARCHIVE
+</p>
+
+<h2>
+SELECTED REPORTS
+</h2>
+
+<p>
+
+REPORT 07:
+
+Neural interface integration
+successful.
+
+</p>
+
+<p>
+
+REPORT 12:
+
+Cybernetic motor response exceeded
+initial projections.
+
+</p>
+
+<p>
+
+REPORT 19:
+
+Energy system demonstrated
+unexpected interaction with
+biological tissue.
+
+</p>
+
+<p>
+
+REPORT 24:
+
+Seraphim-related anomalies remain
+unexplained.
+
+</p>
+
+<p class="highlight">
+
+REPORT 31:
+
+ACCESS RESTRICTED.
+
+</p>
+
+<p>
+
+Additional information unavailable.
+
+</p>
+
+`,
+
+
+/* =========================
+   PRIVATE
+========================= */
+
+
+private: `
+
+<p class="document-label">
+PRIVATE NOTES
+</p>
+
+<h2>
+PERSONAL
+</h2>
+
+<p>
+
+The others still believe this is
+about creating a weapon.
+
+</p>
+
+<p>
+
+They are wrong.
+
+</p>
+
+<p>
+
+Weapons are replaceable.
+
+</p>
+
+<p>
+
+Azazel is not.
+
+</p>
+
+<p>
+
+His power makes him valuable.
+
+His character makes him difficult
+to control.
+
+</p>
+
+<p>
+
+I have considered several possible
+methods of ensuring his cooperation.
+
+</p>
+
+<p>
+
+None are satisfactory.
+
+</p>
+
+<p class="highlight">
+
+I do not want to destroy him.
+
+I want him beside me when the new
+world begins.
+
+</p>
+
+<p>
+
+Perhaps that is the most dangerous
+part of this entire project.
+
+</p>
+
+<p class="document-signature">
+
+— HADES
+
+</p>
+
+`
+
+};
+
+
+
+function openDocument(name) {
+
+    const viewer =
+        document.getElementById(
+            "documentViewer"
+        );
+
+
+    const content =
+        document.getElementById(
+            "documentContent"
+        );
+
+
+    content.innerHTML =
+        documents[name];
+
+
+    viewer.classList.add("visible");
+
+
+    viewer.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+
+function closeDocument() {
+
+    const viewer =
+        document.getElementById(
+            "documentViewer"
+        );
+
+
+    viewer.classList.remove("visible");
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
