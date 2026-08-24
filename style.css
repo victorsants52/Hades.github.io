@@ -747,3 +747,120 @@ footer {
     }
 
 }
+/* =========================
+   MOBILE MENU
+========================= */
+
+.menu-button {
+
+    display: block;
+
+    background: transparent;
+
+    border: 1px solid #087fa3;
+
+    color: #12b8e6;
+
+    font-size: 22px;
+
+    width: 42px;
+
+    height: 42px;
+
+    cursor: pointer;
+
+    z-index: 20;
+}
+
+
+#mobileMenu {
+
+    display: none;
+
+    position: absolute;
+
+    top: 75px;
+
+    right: 5%;
+
+    width: 220px;
+
+    padding: 20px;
+
+    background: #050c10;
+
+    border: 1px solid #087fa3;
+
+    z-index: 10;
+}
+
+
+#mobileMenu a {
+
+    display: block;
+
+    padding: 15px 5px;
+
+    color: #8fa6ad;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    border-bottom: 1px solid #0b2732;
+}
+
+
+#mobileMenu a:hover {
+
+    color: #12b8e6;
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 701px) {
+
+    .menu-button {
+        display: none;
+    }
+
+    #mobileMenu {
+        display: flex;
+
+        position: static;
+
+        width: auto;
+
+        padding: 0;
+
+        background: transparent;
+
+        border: none;
+
+        gap: 28px;
+    }
+
+    #mobileMenu a {
+        border: none;
+        padding: 0;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        position: relative;
+    }
+
+}
