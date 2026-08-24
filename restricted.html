@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Restricted Archive — Hades Corporation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="classified-page">
+<main class="restricted-container">
+    <section class="restricted-header">
+        <p class="section-title">
+            HADES CORPORATION
+        </p>
+        <h1>
+            RESTRICTED ARCHIVE
+        </h1>
+        <p>
+            EXECUTIVE AUTHENTICATION REQUIRED
+        </p>
+    </section>
+    <section class="restricted-box">
+        <div class="restricted-status">
+            <span>
+                SYSTEM STATUS
+            </span>
+            <strong>
+                AWAITING AUTHENTICATION
+            </strong>
+        </div>
+        <label for="accessID">
+            ACCESS ID
+        </label>
+        <input
+            type="text"
+            id="accessID"
+            placeholder="Enter access ID"
+            autocomplete="off">
+        <label for="accessCode">
+            ACCESS CODE
+        </label>
+        <input
+            type="password"
+            id="accessCode"
+            placeholder="Enter access code"
+            autocomplete="off">
+        <button
+            class="access-button"
+            onclick="authenticate()">
+            AUTHENTICATE
+        </button>
+        <div
+            id="authenticationResult"
+            class="authentication-result">
+        </div>
+    </section>
+    <footer class="classified-footer">
+        <p>
+            HADES CORPORATION
+        </p>
+        <p>
+            INTERNAL SYSTEM // ACCESS LOGGED
+        </p>
+    </footer>
+</main>
+<script>
+const correctID = "HDS-7149-AX";
+const correctCode = "AETER-0917";
+function authenticate() {
+    const enteredID =
+        document.getElementById("accessID")
+        .value
+        .trim()
+        .toUpperCase();
+    const enteredCode =
+        document.getElementById("accessCode")
+        .value
+        .trim()
+        .toUpperCase();
+    const result =
+        document.getElementById(
+            "authenticationResult"
+        );
+    if (
+        enteredID === correctID &&
+        enteredCode === correctCode
+    ) {
+        result.innerHTML =
+            "ACCESS GRANTED<br><br>" +
+            "EXECUTIVE AUTHENTICATION SUCCESSFUL.<br><br>" +
+            "LOADING RESTRICTED PROJECT...";
+        setTimeout(function() {
+            window.location.href =
+                "s001.html";
+        }, 1500);
+    } else {
+        result.innerHTML =
+            "ACCESS DENIED<br><br>" +
+            "INVALID CREDENTIALS.<br><br>" +
+            "AUTHENTICATION ATTEMPT LOGGED.";
+    }
+}
+</script>
+</body>
+</html>
