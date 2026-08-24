@@ -195,10 +195,60 @@ function authenticate() {
 
     /*
     =====================================
-    AUTHENTICATION SUCCESSFUL
-    =====================================
-    */
+    AUTHENTICATION <script>
+const correctID = "HDS-7149-AX";
+const correctCode = "AETER-0917";
 
+function authenticate() {
+
+    const enteredID =
+        document.getElementById("accessID")
+        .value
+        .trim()
+        .toUpperCase();
+
+    const enteredCode =
+        document.getElementById("accessCode")
+        .value
+        .trim()
+        .toUpperCase();
+
+    const result =
+        document.getElementById("authenticationResult");
+
+    if (
+        enteredID === correctID &&
+        enteredCode === correctCode
+    ) {
+
+        result.innerHTML =
+            "ACCESS GRANTED<br><br>" +
+            "EXECUTIVE AUTHENTICATION SUCCESSFUL.<br><br>" +
+            "LOADING EXECUTIVE ARCHIVE...";
+
+        setTimeout(function() {
+
+            window.location.href =
+                window.location.origin +
+                window.location.pathname
+                    .substring(
+                        0,
+                        window.location.pathname.lastIndexOf("/") + 1
+                    ) +
+                "executive.html";
+
+        }, 1500);
+
+    } else {
+
+        result.innerHTML =
+            "ACCESS DENIED<br><br>" +
+            "INVALID CREDENTIALS.<br><br>" +
+            "AUTHENTICATION ATTEMPT LOGGED.";
+
+    }
+}
+</script>
 
     systemStatus.textContent =
         "AUTHENTICATION SUCCESSFUL";
