@@ -542,3 +542,214 @@ footer {
     }
 
 }
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-page {
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 10% 8%;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(8, 127, 163, 0.16),
+            transparent 30%
+        ),
+
+        #03070a;
+}
+
+
+.about-page-content {
+
+    max-width: 850px;
+}
+
+
+.about-page h1 {
+
+    font-size: clamp(
+        55px,
+        9vw,
+        105px
+    );
+
+    line-height: .9;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 40px;
+}
+
+
+.about-intro {
+
+    max-width: 600px;
+
+    color: #81969e;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+.about-highlight {
+
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    color: #12b8e6;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HISTORY
+========================= */
+
+.history {
+
+    padding: 120px 8%;
+
+    border-top: 1px solid #0b2732;
+
+    max-width: 950px;
+}
+
+
+.history h2 {
+
+    font-size: 50px;
+
+    margin-bottom: 35px;
+
+    letter-spacing: -2px;
+}
+
+
+.history p:not(.section-title) {
+
+    max-width: 650px;
+
+    color: #71858c;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   MISSION
+========================= */
+
+.mission {
+
+    padding: 120px 8%;
+
+    border-top: 1px solid #0b2732;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 80px;
+
+    background: #050c10;
+}
+
+
+.mission h2 {
+
+    font-size: 50px;
+
+    line-height: .95;
+
+    letter-spacing: -2px;
+}
+
+
+.mission-text {
+
+    max-width: 500px;
+
+    color: #81969e;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+.mission-text p + p {
+
+    margin-top: 25px;
+
+    color: #12b8e6;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .about-page {
+
+        min-height: 600px;
+
+        padding: 100px 7%;
+    }
+
+
+    .about-page h1 {
+
+        font-size: 58px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .history {
+
+        padding: 90px 7%;
+    }
+
+
+    .history h2 {
+
+        font-size: 38px;
+    }
+
+
+    .mission {
+
+        padding: 90px 7%;
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .mission h2 {
+
+        font-size: 40px;
+    }
+
+}
